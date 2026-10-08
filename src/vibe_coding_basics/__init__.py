@@ -16,3 +16,10 @@ def main() -> None:
 
     print()
     print("Total expense:", total_expense)
+
+    category_totals = df.groupby("Category")["Amount"].sum()
+
+    print()
+    print("Expense totals by category:")
+    for category, amount in category_totals.items():
+        print(f"{category} = {amount}")
